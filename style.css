@@ -121,7 +121,7 @@ header {
     transform-style: preserve-3d;
     backface-visibility: hidden;
     background-color: var(--blue);
-    background-color: red;
+    /* background-color: red; */
     animation: 5s timer infinite;
 }
 @keyframes timer {
