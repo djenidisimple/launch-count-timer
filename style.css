@@ -53,9 +53,6 @@ header {
     align-items: center;
     gap: 20px;
 }
-.container {
-    perspective: 800px;
-}
 .card {
     position: relative;
     width: 150px;
@@ -120,7 +117,7 @@ header {
     background-color: transparent;
 }
 .flip-animation {
-    animation: 2s flip infinite;
+    animation: 2s flip;
 }
 .flip-front, .flip-back {
     position: absolute;
