@@ -53,21 +53,6 @@ header {
     align-items: center;
     gap: 20px;
 }
-.card {
-    position: relative;
-    width: 150px;
-    height: 140px;
-    background: linear-gradient(135deg, var(--blue-2), var(--blue));
-
-    border-radius: 8px;
-    box-shadow: 0 8px 0 0 #17171E;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--pink);
-    font-size: 70px;
-    font-weight: bold;
-}
 .flip-card {
     position: relative;
     width: 150px;
@@ -80,6 +65,7 @@ header {
     justify-content: center;
     color: var(--pink);
     font-size: 70px;
+    letter-spacing: -5%;
     font-weight: bold;
 }
 .card-fixed {
@@ -203,4 +189,46 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .flip-card {
+        width: 70px;
+        height: 66px;
+        font-size: 36px;
+    }
+    .flip-card::after, .flip-card::before {
+        width: 6px;
+        height: 6px;
+    }
+    .flip-card::before {
+        left: -2px;
+    }
+    .flip-card::after {
+        right: -2px;
+    }
+    .flip-back {
+        line-height: 1.9;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .flip-card {
+        width: 83px;
+        height: 77px;
+        font-size: 48px;
+    }
+    .flip-card::after, .flip-card::before {
+        width: 7px;
+        height: 7px;
+    }
+    .flip-card::before {
+        left: -3px;
+    }
+    .flip-card::after {
+        right: -3px;
+    }
+    .flip-back {
+        line-height: 1.5;
+    }
 }

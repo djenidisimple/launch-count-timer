@@ -25,7 +25,6 @@ minutesBefore.forEach(value => value.innerText = formated(m));
 secondsBefore.forEach(value => value.innerText = formated(s));
 
 setInterval(()=> {
-    flip[3].classList.add("flip-animation");
     dateNewYears = new Date(`${parseInt(new Date().getFullYear()) + 1}-01-01 00:00:00`);
     dateCurrent = new Date();
     diff = dateNewYears - dateCurrent;
@@ -41,7 +40,18 @@ setInterval(()=> {
     hoursAfter.forEach(value => value.innerText = formated(h));
     daysBefore.forEach(value => value.innerText = formated(d - 1));
     daysAfter.forEach(value => value.innerText = formated(d));
-    setTimeout(() => {
-        flip[3].classList.remove("flip-animation");
-    }, 950);
+    addAnimation(3, d, h, m, s, flip);
+    addAnimation(2, d, h, m, s, flip);
+    addAnimation(1, d, h, m, s, flip);
+    addAnimation(0, d, h, m, s, flip);
 }, 1000);
+
+
+const addAnimation = (index = 3, d, h, m, s, flip) => {
+    if (index == 0 && h == 0 && m == 0 || index == 1 && m == 0 && s == 0 || index == 2 && s == 0 || index == 3 && s >= (0 && s <= 59)) {
+        flip[index].classList.add("flip-animation");
+        setTimeout(() => {
+            flip[index].classList.remove("flip-animation");
+        }, 950);
+    }
+}
