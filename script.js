@@ -1,10 +1,3 @@
-let dateNewYears = new Date(`${parseInt(new Date().getFullYear())}-01-${parseInt(new Date().getDay()) + 1} 00:00:00`);
-let dateCurrent = new Date();
-let diff = dateNewYears - dateCurrent;
-let remainingDays = Math.floor(diff / (1000 * 60 * 60 * 24));
-let remainingHours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-let remainingMinutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-let remainingSeconds = Math.floor((diff % (1000 * 60)) / 1000);
 let flip = document.querySelectorAll(".flip-inner");
 const formated = (value) => {
     return parseInt(value) <= 9 ? "0" + value : value;
@@ -18,7 +11,7 @@ let minutesBefore = document.querySelectorAll(".minutes-before");
 let minutesAfter = document.querySelectorAll(".minutes-after");
 let secondsBefore = document.querySelectorAll(".seconds-before");
 let secondsAfter = document.querySelectorAll(".seconds-after");
-let s = remainingSeconds, m = remainingMinutes, h = remainingHours, d = remainingDays;
+let s = parseInt(secondsBefore[0].textContent), m = parseInt(minutesBefore[0].textContent), h = parseInt(hoursBefore[0].textContent), d = parseInt(daysBefore[0].textContent);
 daysBefore.forEach(value => value.innerText = formated(d));
 hoursBefore.forEach(value => value.innerText = formated(h));
 minutesBefore.forEach(value => value.innerText = formated(m));
@@ -28,7 +21,7 @@ setInterval(()=> {
     s = (s > 0 && s <= 59) ? parseInt(s - 1) : 59;
     m = (m > 0 && m <= 59) ? ((s == 0) ? parseInt(m - 1) : m) : 59;
     h = (h > 0 && h <= 23) ? ((m == 0) ? parseInt(h - 1) : h) : 23;
-    d = Math.floor((diff) / (1000 * 60 * 60 * 24));
+    d = (d > 0) ? ((h == 0) ? parseInt(d - 1) : d) : 0;
     secondsBefore.forEach(value => value.innerText = formated(s + 1));
     secondsAfter.forEach(value => value.innerText = formated(s));
     minutesBefore.forEach(value => value.innerText = formated(m + 1));
