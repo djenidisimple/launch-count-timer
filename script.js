@@ -1,4 +1,4 @@
-let dateNewYears = new Date(`${parseInt(new Date().getFullYear()) + 1}-01-01 00:00:00`);
+let dateNewYears = new Date(`${parseInt(new Date().getFullYear())}-01-${parseInt(new Date().getDay()) + 1} 00:00:00`);
 let dateCurrent = new Date();
 let diff = dateNewYears - dateCurrent;
 let remainingDays = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -25,9 +25,6 @@ minutesBefore.forEach(value => value.innerText = formated(m));
 secondsBefore.forEach(value => value.innerText = formated(s));
 
 setInterval(()=> {
-    dateNewYears = new Date(`${parseInt(new Date().getFullYear()) + 1}-01-01 00:00:00`);
-    dateCurrent = new Date();
-    diff = dateNewYears - dateCurrent;
     s = (s > 0 && s <= 59) ? parseInt(s - 1) : 59;
     m = (m > 0 && m <= 59) ? ((s == 0) ? parseInt(m - 1) : m) : 59;
     h = (h > 0 && h <= 23) ? ((m == 0) ? parseInt(h - 1) : h) : 23;
