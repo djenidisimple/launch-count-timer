@@ -61,11 +61,13 @@ footer {
     position: relative;
     width: 100%;
     height: 197px;
-    background: url(./images/pattern-hills.svg) center no-repeat;
+    background: url(./images/pattern-hills.svg) center bottom no-repeat;
+    background-size: cover;
     bottom: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    padding-bottom: 50px;
     gap: 32px;
 }
 .flex-row {
@@ -200,6 +202,13 @@ footer {
     header {
         font-size: 18px;
         letter-spacing: 0.34em;
+    }
+    main, header {
+        max-width: 348px;
+    }
+    footer {
+        background-position-x: 86%;
+        background-size: 245% 75%;
     }
     .flex-row, .flex-col {
         gap: 16px;
