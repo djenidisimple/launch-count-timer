@@ -25,35 +25,61 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-around;
+    gap: 6em;
     box-sizing: border-box;
-    gap: 8em;
     background: url(./images/bg-stars.svg) center no-repeat;
     background-color: var(--dark-blue);
 }
 header {
     width: 100%;
-    height: auto;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    font-size: 14px;
-    letter-spacing: 0.8em;
+    font-size: 23px;
+    letter-spacing: 0.3em;
+}
+span {
+    text-transform: uppercase;
+    color: var(--grey);
+}
+a:hover path {
+    fill: var(--pink);
+}
+main {
+    position: relative;
+    max-width: 736px;
+    display: flex;
+    flex-direction: column;
+    gap: 81px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+footer {
+    position: relative;
+    width: 100%;
+    height: 197px;
+    background: url(./images/pattern-hills.svg) center no-repeat;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
 }
 .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 20px;
+    gap: 30px;
 }
 .flex-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 .flip-card {
     position: relative;
@@ -169,30 +195,14 @@ header {
     background-color: var(--dark-blue);
     z-index: 4;
 }
-span {
-    text-transform: uppercase;
-    color: var(--grey);
-}
-main {
-    position: relative;
-    padding: 10px;
-}
-footer {
-    position: relative;
-    width: 100%;
-    height: 197px;
-    background: url(./images/pattern-hills.svg) center no-repeat;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-}
 
 @media screen and (max-width: 767px) {
     header {
         font-size: 18px;
         letter-spacing: 0.34em;
+    }
+    .flex-row, .flex-col {
+        gap: 16px;
     }
     .flip-card {
         width: 70px;
@@ -219,6 +229,9 @@ footer {
         width: 83px;
         height: 77px;
         font-size: 48px;
+    }
+    .flex-row, .flex-col {
+        gap: 20px;
     }
     .flip-card::after, .flip-card::before {
         width: 7px;

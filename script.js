@@ -45,3 +45,23 @@ const addAnimation = (index = 3, d, h, m, s, flip) => {
         }, 950);
     }
 }
+
+function pentagonal(k) {
+    return (k * (3 * k - 1)) / 2;
+}
+
+function p(n) {
+    if (n < 0) {
+        return 0;
+    } 
+    if (n == 0) {
+        return 1;
+    }
+    for (let k = 1; k < n; k++) {
+        return ((-1) ^ (k + 1)) * (p(n - pentagonal(k)) + p(n - pentagonal(-k)));   
+    }
+}
+
+
+
+console.log(p(5));
