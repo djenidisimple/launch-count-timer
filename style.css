@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    gap: 6em;
+    gap: 1em;
     box-sizing: border-box;
     background: url(./images/bg-stars.svg) center no-repeat;
     background-color: var(--dark-blue);
@@ -48,7 +48,7 @@ span {
 a:hover path {
     fill: var(--pink);
 }
-main {
+main > div {
     position: relative;
     max-width: 736px;
     display: flex;
@@ -57,10 +57,18 @@ main {
     padding: 10px;
     box-sizing: border-box;
 }
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
 footer {
     position: relative;
     width: 100%;
-    height: 197px;
+    height: 196px;
     background: url(./images/pattern-hills.svg) center bottom no-repeat;
     background-size: cover;
     bottom: 0;
@@ -148,11 +156,11 @@ footer {
 .line {
     position: absolute;
     width: 100%;
-    height: 1px;
+    height: 1.5px;
     background-color: var(--blue);
     top: 50%;
     transform: translateY(-50%);
-    z-index: 4;
+    z-index: 1;
 }
 .flip-front {
     line-height: .01;
@@ -203,7 +211,7 @@ footer {
         font-size: 18px;
         letter-spacing: 0.34em;
     }
-    main, header {
+    main > div, header {
         max-width: 348px;
     }
     footer {
@@ -212,6 +220,9 @@ footer {
     }
     .flex-row, .flex-col {
         gap: 16px;
+    }
+    .line {
+        height: 0.2px;
     }
     .flip-card {
         width: 70px;
@@ -229,7 +240,10 @@ footer {
         right: -2px;
     }
     .flip-back {
-        line-height: 1.9;
+        line-height: 1.8;
+    }
+    .card-bottom {
+        line-height: .03;
     }
 }
 
@@ -253,6 +267,12 @@ footer {
         right: -3px;
     }
     .flip-back {
-        line-height: 1.5;
+        line-height: 1.6;
+    }
+    .line {
+        height: 1px;
+    }
+    .card-bottom {
+        line-height: .03;
     }
 }
