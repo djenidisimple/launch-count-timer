@@ -17,3 +17,13 @@
 - [Acknowledgments](#acknowledgments)
 
 ## Screenshot
+
+<div align="center">
+
+![Desktop Screenshot](./images/Screenshot-desktop.jpeg)
+</div>
+
+<div align="center">
+
+![Mobile Screenshot](./images/Screenshot-mobile.jpeg)
+</div>

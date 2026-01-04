@@ -223,7 +223,8 @@ footer {
         max-width: 348px;
     }
     main > div {
-        gap: 45px;
+        height: 235px;
+        gap: 56px;
     }
     .flex-row, .flex-col {
         gap: 16px;
