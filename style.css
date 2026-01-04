@@ -147,7 +147,7 @@ footer {
     background-color: transparent;
 }
 .flip-animation {
-    animation: 2s flip;
+    animation: 1s flip;
 }
 .flip-front, .flip-back {
     position: absolute;
